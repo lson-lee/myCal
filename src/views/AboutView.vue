@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>浅浅试一试一个追剧日历</h1>
   </div>
 </template>
