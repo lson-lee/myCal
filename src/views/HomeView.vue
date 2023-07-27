@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <FullCalendar :options="calendarOptions">
+    <FullCalendar :options="calendarOptions" ref="fullCalendar">
       <template v-slot:eventContent="arg">
-        <h1>{{arg.event.title}}</h1>
+        <div class="event-block">
+          <img :src="arg.event.extendedProps.image" alt="" style="width: 100%">
+          <p style="text-align: center">{{ arg.event.title }}</p>
+        </div>
       </template>
     </FullCalendar>
     <div>
@@ -18,7 +21,11 @@ import FullCalendar from '@fullcalendar/vue3';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import zhCnLocale from '@fullcalendar/core/locales/zh-cn';
-import {reactive, ref} from 'vue';
+import {computed, reactive, ref} from 'vue';
+import {getEventObj} from "@/util/event";
+import { useStore } from 'vuex'
+import {setCalendar} from "@/util/get-calender";
+import {getSetting, setSetting} from "@/util/setting";
 
 const weekDayConfig = [
     '周日',
@@ -30,30 +37,38 @@ const weekDayConfig = [
     '周六',
 ]
 const handleChangeStartDay = (index: number) => {
-  calendarOptions.firstDay = index;
+  setSetting('startDay', index)
 }
-
-let startDay = ref(0);
+const store = useStore()
+// 初始化日历
 let calendarOptions = reactive({
   plugins: [dayGridPlugin, interactionPlugin],
   locales: [zhCnLocale],
   locale: 'zh-cn',
   initialView: 'dayGridMonth',
-  firstDay: startDay.value,
+  firstDay: computed(() => getSetting('startDay')),
+  weekends  : computed(() => getSetting('weekends')),
   eventDisplay: 'block',
   events: [{
     title  : 'event1',
     start  : '2023-08-01',
-    backgroundColor: 'red',
   }],
   dateClick: (obj: any) => {
-    console.log('dateClick', obj)
+    const title = window.prompt('输入剧名')
+    obj.view.calendar.addEvent(getEventObj({
+     start: obj.dateStr,
+     end: obj.dateStr,
+     allDay: obj.allDay,
+     title
+   }))
   },
   eventClassNames: () => {
     return ['calender__event-wrapper']
   },
-  weekends : true,
 })
+let fullCalendar = ref(null)
+// 保存日历到全局
+setCalendar(fullCalendar);
 
-let toggleWeek = () => calendarOptions.weekends  = !calendarOptions.weekends
+let toggleWeek = () => setSetting('weekends', !getSetting('weekends'))
 </script>
