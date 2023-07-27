@@ -8,4 +8,4 @@ jobs:
     environment: test
     steps:
       - name: 冲鸭
-        run: curl ${{ vars.LEANCLOUD_PUBLISH }}
+        run: curl ${{ secrets.LEANCLOUD_PUBLISH }}
