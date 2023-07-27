@@ -6,6 +6,8 @@ jobs:
   go-publish:
     runs-on: ubuntu-latest
     environment: test
+    env:
+      publish_url: ${{ vars.LEANCLOUD_PUBLISH }}
     steps:
       - name: 冲鸭
-        run: curl $LEANCLOUD_PUBLISH
+        run: curl ${{publish_url}}
