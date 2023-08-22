@@ -5,6 +5,7 @@ specifiers:
   '@fullcalendar/daygrid': ^6.1.8
   '@fullcalendar/interaction': ^6.1.8
   '@fullcalendar/vue3': ^6.1.8
+  '@mdi/font': ^7.2.96
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
   '@vue/cli-plugin-babel': ~5.0.0
@@ -25,6 +26,7 @@ specifiers:
   vue: ^3.2.13
   vue-class-component: ^8.0.0-0
   vue-router: ^4.0.3
+  vuetify: ^3.3.10
   vuex: ^4.0.0
 
 dependencies:
@@ -32,6 +34,7 @@ dependencies:
   '@fullcalendar/daygrid': 6.1.8_@fullcalendar+core@6.1.8
   '@fullcalendar/interaction': 6.1.8_@fullcalendar+core@6.1.8
   '@fullcalendar/vue3': 6.1.8_553y7o7t4dfwityejghlk7cgdy
+  '@mdi/font': 7.2.96
   '@typescript-eslint/eslint-plugin': 5.62.0_cwci2d3l4r3xg63nq67k6sh73u
   '@typescript-eslint/parser': 5.62.0_sgaiclxgc5mltnpgmg7py4v6ca
   '@vue/cli-plugin-babel': 5.0.8_3pjgsmfodmhofpc46aubk4tizm
@@ -52,6 +55,7 @@ dependencies:
   vue: 3.3.4
   vue-class-component: 8.0.0-rc.1_vue@3.3.4
   vue-router: 4.2.4_vue@3.3.4
+  vuetify: 3.3.10_typescript@4.5.5+vue@3.3.4
   vuex: 4.1.0_vue@3.3.4
 
 packages:
@@ -1477,6 +1481,10 @@ packages:
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
+    dev: false
+
+  /@mdi/font/7.2.96:
+    resolution: {integrity: sha512-e//lmkmpFUMZKhmCY9zdjRe4zNXfbOIJnn6xveHbaV2kSw5aJ5dLXUxcRt1Gxfi7ZYpFLUWlkG2MGSFAiqAu7w==}
     dev: false
 
   /@node-ipc/js-queue/2.0.3:
@@ -7786,6 +7794,29 @@ packages:
       '@vue/runtime-dom': 3.3.4
       '@vue/server-renderer': 3.3.4_vue@3.3.4
       '@vue/shared': 3.3.4
+    dev: false
+
+  /vuetify/3.3.10_typescript@4.5.5+vue@3.3.4:
+    resolution: {integrity: sha512-jV5zA4PMK1ik8j/alPhAR75fzSoAvUgPcoKl+fZ/buDu70vJ3nM6+F3zh78UBs0PMzyLlarwt851QNbYXLbZbQ==}
+    engines: {node: ^12.20 || >=14.13}
+    peerDependencies:
+      typescript: '>=4.7'
+      vite-plugin-vuetify: ^1.0.0-alpha.12
+      vue: ^3.2.0
+      vue-i18n: ^9.0.0
+      webpack-plugin-vuetify: ^2.0.0-alpha.11
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+      vite-plugin-vuetify:
+        optional: true
+      vue-i18n:
+        optional: true
+      webpack-plugin-vuetify:
+        optional: true
+    dependencies:
+      typescript: 4.5.5
+      vue: 3.3.4
     dev: false
 
   /vuex/4.1.0_vue@3.3.4:

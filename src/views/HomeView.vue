@@ -3,7 +3,10 @@
     <FullCalendar :options="calendarOptions" ref="fullCalendar">
       <template v-slot:eventContent="arg">
         <div class="event-block">
-          <img :src="arg.event.extendedProps.image" alt="" style="width: 100%">
+          <v-img
+              :src="arg.event.extendedProps.image"
+              cover
+          ></v-img>
           <p style="text-align: center">{{ arg.event.title }}</p>
         </div>
       </template>
