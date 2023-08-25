@@ -7,7 +7,7 @@ export const getEventObj = (obj: any) => {
         start: obj.start,
         end: obj.end,
         allDay: obj.allDay,
-        image: 'https://learn.microsoft.com/zh-cn/powershell/media/index/avatar_128.svg'
+        image: obj.image || 'https://learn.microsoft.com/zh-cn/powershell/media/index/avatar_128.svg'
     }
 }
 

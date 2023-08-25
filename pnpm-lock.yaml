@@ -22,6 +22,7 @@ specifiers:
   register-service-worker: ^1.7.2
   sass: ^1.32.7
   sass-loader: ^12.0.0
+  tt-uploader: ^1.0.28
   typescript: ~4.5.5
   vue: ^3.2.13
   vue-class-component: ^8.0.0-0
@@ -51,6 +52,7 @@ dependencies:
   register-service-worker: 1.7.2
   sass: 1.64.1
   sass-loader: 12.6.0_sass@1.64.1
+  tt-uploader: 1.0.28
   typescript: 4.5.5
   vue: 3.3.4
   vue-class-component: 8.0.0-rc.1_vue@3.3.4
@@ -3606,6 +3608,10 @@ packages:
       which: 2.0.2
     dev: false
 
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
+
   /crypto-random-string/2.0.0:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
     engines: {node: '>=8'}
@@ -4296,6 +4302,11 @@ packages:
 
   /eventemitter3/4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    dev: false
+
+  /events/1.1.1:
+    resolution: {integrity: sha512-kEcvvCBByWXGnZy6JUlgAp2gBIUjfCAV6P6TgT1/aaQKcmuAEC4OZTV1I4EWQLz2gxZw76atuVyvHhTxvi0Flw==}
+    engines: {node: '>=0.4.x'}
     dev: false
 
   /events/3.3.0:
@@ -5357,6 +5368,10 @@ packages:
   /jsonpointer/5.0.1:
     resolution: {integrity: sha512-p/nXbhSEcu3pZRdkW1OfJhpsVtW1gd4Wa1fnQc9YLiTfAjn0312eMKimbdIQzuZl9aa9xUGaRlP9T/CJE/ditQ==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /jsrsasign/10.8.6:
+    resolution: {integrity: sha512-bQmbVtsfbgaKBTWCKiDCPlUPbdlRIK/FzSwT3BzIgZl/cU6TqXu6pZJsCI/dJVrZ9Gir5GC4woqw9shH/v7MBw==}
     dev: false
 
   /kind-of/6.0.3:
@@ -7452,6 +7467,14 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 4.5.5
+    dev: false
+
+  /tt-uploader/1.0.28:
+    resolution: {integrity: sha512-5M1LNE7IMeIjrYyRBefIRM8LIpXsFYVytW+HLo38jhVBio9Skr8IyQRNq7bOzgE4+dAOvJoQk5c4Jf7HdKhWew==}
+    dependencies:
+      crypto-js: 4.1.1
+      events: 1.1.1
+      jsrsasign: 10.8.6
     dev: false
 
   /type-check/0.4.0:

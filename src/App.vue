@@ -96,8 +96,18 @@ nav {
 </style>
 <script setup lang="ts">
 import {routes} from '@/router'
+import TTUploader from 'tt-uploader';
+
 const links = routes.map(item => ({
   to: item.path,
   text: item.meta.text,
 }))
+window.ttService = new TTUploader({
+  appId: 517782,
+  userId: 'dev',
+  imageConfig: {
+    serviceId: 'a87o067aj7'
+  }
+})
+fetch('http://124.220.75.29/api/get-tt-config').then(res => res.json().then(res => window.ttConfig = res))
 </script>
